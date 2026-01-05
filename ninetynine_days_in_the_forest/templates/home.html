@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h2>Welcome to {{ title }}</h2>
+
+<p>
+    Survive, explore, and progress through the forest.
+    Each day brings new challenges.
+</p>
+
+<p>
+    Total Days Available: <strong>{{ total_days }}</strong>
+</p>
+
+<a href="{% url 'ninetynine_days_in_the_forest:days' %}">
+    Start Your Journey →
+</a>
+{% endblock %}

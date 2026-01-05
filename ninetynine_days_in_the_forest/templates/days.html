@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}All Days{% endblock %}
+
+{% block content %}
+<h2>{{ game_name }} – Days</h2>
+
+<ul>
+    {% for day in days %}
+    <li>
+        <a href="{% url 'ninetynine_days_in_the_forest:day_detail' day %}">
+            Day {{ day }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

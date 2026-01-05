@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Day {{ day }}{% endblock %}
+
+{% block content %}
+<h2>{{ game_name }}</h2>
+
+<h3>Day {{ day }}</h3>
+
+<p>
+    You survived another day in the forest.
+    Stay alert — danger increases with time.
+</p>
+
+<div>
+    {% if previous_day %}
+    <a href="{% url 'ninetynine_days_in_the_forest:day_detail' previous_day %}">
+        ← Day {{ previous_day }}
+    </a>
+    {% endif %}
+
+    {% if next_day %}
+    |
+    <a href="{% url 'ninetynine_days_in_the_forest:day_detail' next_day %}">
+        Day {{ next_day }} →
+    </a>
+    {% endif %}
+</div>
+{% endblock %}
